@@ -1,101 +1,96 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Fazenda Deriva</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --primary-color: #4E7B31;
-      --secondary-color: #F4E3C1;
-      --accent-color: #D9A441;
-      --text-color: #333;
+    * {margin:0; padding:0; box-sizing:border-box; font-family:Arial, sans-serif;}
+    body {background:#fff; color:#333;}
+
+    header, footer {
+      background:#870b44;
+      color:#fff;
+      padding:1rem 2rem;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
-    body { background-color: var(--secondary-color); color: var(--text-color); }
-    header {
-      background: var(--primary-color);
-      color: #fff;
-      padding: 40px 20px;
-      text-align: center;
-      background-image: url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1350&q=80');
-      background-size: cover;
-      background-position: center;
-      position: relative;
-    }
-    header::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(78,123,49,0.6);
-    }
+
     header h1 {
-      position: relative;
-      font-size: 3rem;
-      margin-bottom: 10px;
+      font-size:1.5rem;
+      font-weight:bold;
     }
-    header p {
-      position: relative;
-      font-size: 1.2rem;
+
+    .menu-btn {
+      font-size:1.5rem;
+      cursor:pointer;
+      background:none;
+      border:none;
+      color:#fff;
     }
+
+    nav {
+      position:fixed;
+      top:0;
+      right:-250px;
+      width:250px;
+      height:100%;
+      background:#870b44;
+      transition:0.3s ease;
+      display:flex;
+      flex-direction:column;
+      padding:2rem 1rem;
+    }
+
+    nav a {
+      color:#fff;
+      text-decoration:none;
+      margin:1rem 0;
+      font-size:1.2rem;
+    }
+
+    nav.active {right:0;}
+
     main {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 0 20px;
+      min-height:80vh;
+      padding:2rem;
+      text-align:center;
     }
-    section {
-      margin-bottom: 40px;
-    }
-    h2 { color: var(--primary-color); margin-bottom: 20px; }
-    p { line-height: 1.6; }
-    .btn {
-      display: inline-block;
-      padding: 12px 24px;
-      background: var(--accent-color);
-      color: #fff;
-      text-decoration: none;
-      border-radius: 6px;
-      transition: background 0.3s;
-      margin-top: 20px;
-    }
-    .btn:hover { background: var(--primary-color); }
+
     footer {
-      text-align: center;
-      padding: 20px;
-      background: var(--primary-color);
-      color: #fff;
+      text-align:center;
+      justify-content:center;
+      font-size:0.9rem;
     }
   </style>
 </head>
 <body>
-
   <header>
     <h1>Fazenda Deriva</h1>
-    <p>Bem-vindo à nossa fazenda, um lugar de natureza, produtividade e tranquilidade</p>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
   </header>
 
+  <nav id="menu">
+    <a href="#">Início</a>
+    <a href="#">Sobre</a>
+    <a href="#">Projetos</a>
+    <a href="#">Contato</a>
+  </nav>
+
   <main>
-    <section>
-      <h2>Sobre a Fazenda</h2>
-      <p>A Fazenda Deriva está localizada em um espaço rural com lagoa, pomar e áreas de preservação natural. Aqui unimos produção sustentável, vida em harmonia com a natureza e inovação no campo.</p>
-    </section>
-
-    <section>
-      <h2>Nossos Projetos</h2>
-      <p>Estamos desenvolvendo horta, galinheiro, canil e áreas de paisagismo, pensando em funcionalidade e beleza para todos os espaços da fazenda.</p>
-    </section>
-
-    <section>
-      <h2>Acesse o Controle Financeiro</h2>
-      <p>Gerencie suas finanças da fazenda de forma prática e segura através do nosso sistema online.</p>
-      <a class="btn" href="/financeiro/?key=minhaChaveSecreta123">Acessar Financeiro</a>
-    </section>
+    <h2>Bem-vindo à Fazenda Deriva</h2>
+    <p>Um espaço de conexão com a natureza e desenvolvimento sustentável.</p>
   </main>
 
   <footer>
     © 2025 Fazenda Deriva. Todos os direitos reservados.
   </footer>
 
+  <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("active");
+    }
+  </script>
 </body>
 </html>
