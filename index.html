@@ -11,315 +11,97 @@
     rel="stylesheet"
   />
 
-  <!-- Font Awesome -->
+  <!-- Font Awesome (CDN oficial 6.4.0) -->
   <link
-    rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-p7vX2QYGj1ZQm8Q6kF8wNrlS+/2+he0uQnEe/4ZkYmDz8x+5bHsIGrSBFhdYEoFZ4GQ+fITeh+n6m+nXEf+ktA=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
+    rel="stylesheet"
   />
-
-  <style>
-    /* Reset & Base */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      background: #f5f5f5;
-      color: #333;
-      font-family: 'Roboto', sans-serif;
-      line-height: 1.6;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* Headings */
-    h1,
-    h2,
-    h3 {
-      font-family: 'Merriweather', serif;
-      color: #870b44;
-    }
-
-    /* Header & Footer */
-    header,
-    footer {
-      background: #870b44;
-      color: #fff;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    footer {
-      justify-content: center;
-      font-size: 0.9rem;
-    }
-
-    /* Logo */
-    .logo {
-      display: flex;
-      align-items: center;
-    }
-    .logo i {
-      margin-right: 0.5rem;
-      font-size: 1.6rem;
-    }
-
-    /* Nav (slide-in) */
-    .menu-btn {
-      font-size: 1.4rem;
-      background: none;
-      border: none;
-      color: #fff;
-      cursor: pointer;
-    }
-    nav {
-      position: fixed;
-      top: 0;
-      right: -260px;
-      width: 260px;
-      height: 100%;
-      background: #fff;
-      box-shadow: -2px 0 6px rgba(0, 0, 0, 0.1);
-      transition: right 0.3s ease;
-      padding: 2rem 1.5rem;
-      display: flex;
-      flex-direction: column;
-    }
-    nav.active {
-      right: 0;
-    }
-    nav a {
-      display: flex;
-      align-items: center;
-      margin: 1rem 0;
-      color: #870b44;
-      font-weight: 500;
-      transition: color 0.3s, transform 0.3s;
-    }
-    nav a i {
-      margin-right: 0.6rem;
-      width: 1.2rem;
-      text-align: center;
-    }
-    nav a:hover {
-      color: #a3c293;
-      transform: translateX(6px);
-    }
-
-    /* Main Content */
-    main {
-      flex: 1;
-      padding: 2rem;
-      max-width: 960px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    .btn {
-      display: inline-block;
-      background-color: #870b44;
-      color: #fff;
-      padding: 0.6rem 1.2rem;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-weight: 500;
-      transition: background 0.3s, transform 0.2s;
-      text-decoration: none;
-    }
-    .btn:hover {
-      background-color: #a30e55;
-      transform: scale(1.05);
-    }
-    .white-bg {
-      background: #fff;
-      color: #870b44;
-      padding: 1rem;
-      border-radius: 6px;
-    }
-
-    /* Sections */
-    .hero {
-      margin-bottom: 2rem;
-    }
-    .hero p {
-      margin-top: 0.5rem;
-      font-size: 1.1rem;
-      color: #555;
-    }
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-    .feature-card {
-      background: #fff;
-      border-radius: 6px;
-      padding: 1.5rem;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-      text-align: left;
-    }
-    .feature-card i {
-      font-size: 1.8rem;
-      color: #6b8e23;
-      margin-bottom: 0.8rem;
-    }
-    .feature-card h3 {
-      margin-bottom: 0.6rem;
-    }
-    .feature-card p {
-      color: #666;
-      font-size: 0.95rem;
-    }
-
-    /* Login Modal */
-    .modal {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      padding: 1rem;
-    }
-    .modal.active {
-      display: flex;
-    }
-    .modal-content {
-      background: #fff;
-      padding: 2rem;
-      border-radius: 8px;
-      width: 100%;
-      max-width: 400px;
-      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
-      text-align: left;
-    }
-    .modal-content h2 {
-      margin-bottom: 1rem;
-      font-size: 1.4rem;
-      color: #870b44;
-    }
-    .modal-content label {
-      display: block;
-      margin: 0.6rem 0 0.3rem;
-      font-weight: 500;
-    }
-    .modal-content input {
-      width: 100%;
-      padding: 0.5rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-    .modal-content .btn {
-      width: 100%;
-      margin-top: 1rem;
-    }
-    .close-btn {
-      background: none;
-      border: none;
-      font-size: 1.2rem;
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      color: #333;
-      cursor: pointer;
-    }
-  </style>
+	<!-- CSS próprios -->
+	<link rel="stylesheet" href="css/basic.css">
+ 
 </head>
-
 <body>
+
   <!-- Header -->
   <header>
-    <div class="logo">
-      <i class="fas fa-seedling"></i>
-      <h1>Fazenda Deriva</h1>
-    </div>
-    <div>
-      <button class="btn" onclick="toggleLogin()">
-        <i class="fas fa-sign-in-alt"></i> Login
-      </button>
-      <button class="menu-btn" onclick="toggleMenu()">
-        <i class="fas fa-bars"></i>
-      </button>
+    <div class="header-top">
+      <div class="logo">
+        <i class="fa-solid fa-seedling"></i>
+        <h2 style="color:white;">Bem-vindo à Fazenda Deriva</h2>
+      </div>
+      <div style="display: flex; gap: 1rem; align-items:center;">
+        <button class="btn">
+          <i class="fa-solid fa-chart-line"></i>Área Privativa
+        </button>
+        <button class="menu-btn" onclick="toggleMenu()">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
     </div>
   </header>
 
   <!-- Slide-in Nav -->
   <nav id="menu">
-    <a href="#"><i class="fas fa-home"></i>Início</a>
-    <a href="#"><i class="fas fa-info-circle"></i>Sobre</a>
-    <a href="#"><i class="fas fa-leaf"></i>Projetos</a>
-    <a href="#"><i class="fas fa-envelope"></i>Contato</a>
+    <button class="close-menu" onclick="toggleMenu()">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <a href="#"><i class="fa-solid fa-house"></i>Início</a>
+    <a href="#"><i class="fa-solid fa-circle-info"></i>Sobre</a>
+    <a href="#"><i class="fa-solid fa-leaf"></i>Projetos</a>
+    <a href="#"><i class="fa-solid fa-envelope"></i>Contato</a>
   </nav>
 
-  <!-- Main -->
+  <!-- Corpo -->
   <main>
-    <section class="hero">
-      <h2>Bem-vindo à Fazenda Deriva</h2>
-      <p>Um espaço de conexão com a natureza e desenvolvimento sustentável.</p>
-      <a href="#sobre" class="btn">Saiba Mais</a>
+    <section class="white-bg" style="margin-bottom: 2rem;">
+      <h3><i class="fa-solid fa-leaf"></i> Sobre a Fazenda</h3>
+      <p>
+        A Fazenda Deriva é um espaço dedicado à conexão com a natureza, práticas sustentáveis e vida simples. Aqui cultivamos alimentos orgânicos, preservamos a biodiversidade e buscamos equilíbrio entre tecnologia e tradição.
+      </p>
     </section>
 
-    <section id="sobre" class="features">
-      <div class="feature-card">
-        <i class="fas fa-tractor"></i>
-        <h3>Agricultura Sustentável</h3>
-        <p>Práticas que respeitam o solo, a água e o ar, garantindo colheitas saudáveis.</p>
-      </div>
-      <div class="feature-card">
-        <i class="fas fa-water"></i>
-        <h3>Recursos Hídricos</h3>
-        <p>Manejo inteligente da água para irrigação e conservação ambiental.</p>
-      </div>
-      <div class="feature-card">
-        <i class="fas fa-chart-line"></i>
-        <h3>Controle Financeiro</h3>
-        <p>Área privativa para gerenciar receitas, despesas e investimentos da fazenda.</p>
-      </div>
+    <section class="white-bg" style="margin-bottom: 2rem;">
+      <h3><i class="fa-solid fa-tractor"></i> Projetos</h3>
+      <ul style="list-style: none; padding-left: 0;">
+        <li style="margin-bottom: 1rem;">
+          <strong>🌱 Horta Agroecológica:</strong> Produção de alimentos sem agrotóxicos, com manejo regenerativo do solo.
+        </li>
+        <li style="margin-bottom: 1rem;">
+          <strong>💧 Captação de Água da Chuva:</strong> Sistema de armazenamento e filtragem para uso consciente.
+        </li>
+        <li style="margin-bottom: 1rem;">
+          <strong>📊 Sistema de Finanças:</strong> Área privativa para controle de receitas, despesas e investimentos da fazenda.
+        </li>
+      </ul>
+    </section>
+
+    <section class="white-bg">
+      <h3><i class="fa-solid fa-envelope"></i> Contato</h3>
+      <p>Fale com a gente! Estamos sempre abertos a trocas, parcerias e boas conversas.</p>
+      <form action="https://formspree.io/f/mwpnoopr" method="POST">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" placeholder="Seu nome" required />
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Seu email" required />
+        <label for="mensagem">Mensagem</label>
+        <textarea id="mensagem" name="mensagem" rows="4" placeholder="Escreva sua mensagem..." required></textarea>
+        <div style="text-align: center; margin-top: 1rem;">
+          <button type="submit" class="btn">
+            <i class="fa-solid fa-paper-plane"></i> Enviar
+          </button>
+        </div>
+      </form>
     </section>
   </main>
 
-  <!-- Login Modal -->
-  <div id="login-modal" class="modal">
-    <div class="modal-content">
-      <button class="close-btn" onclick="toggleLogin()">&times;</button>
-      <h2>Área Privativa</h2>
-      <form>
-        <label for="user">Usuário</label>
-        <input type="text" id="user" name="user" placeholder="Digite seu usuário" required />
-        <label for="pass">Senha</label>
-        <input
-          type="password"
-          id="pass"
-          name="pass"
-          placeholder="Digite sua senha"
-          required
-        />
-        <button type="submit" class="btn">Entrar</button>
-      </form>
-    </div>
-  </div>
-
   <!-- Footer -->
   <footer>
-    <p>© 2025 Fazenda Deriva. Todos os direitos reservados.</p>
+    © 2025 Fazenda Deriva. Todos os direitos reservados.
   </footer>
 
   <script>
     function toggleMenu() {
       document.getElementById('menu').classList.toggle('active');
-    }
-    function toggleLogin() {
-      document.getElementById('login-modal').classList.toggle('active');
     }
   </script>
 </body>
