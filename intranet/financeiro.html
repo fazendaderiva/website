@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fazenda Deriva - Financeiro</title>
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Font Awesome -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    rel="stylesheet"
+  />
+  
+  <!-- CSS próprio -->
+  <link rel="stylesheet" href="css/basic.css">
+  
+  <style>
+    /* iframe full width e altura mínima */
+    .apps-iframe {
+      width: 100%;
+      height: 80vh;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-top">
+      <div class="logo">
+        <i class="fa-solid fa-seedling"></i>
+        <h2 style="color:white;">Financeiro da Intranet da Fazenda Deriva</h2>
+      </div>
+      <div style="display: flex; gap: 1rem; align-items:center;">
+        <button class="menu-btn" onclick="toggleMenu()">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Slide-in Nav -->
+  <nav id="menu">
+    <button class="close-menu" onclick="toggleMenu()">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <a href="/"><i class="fa-solid fa-house"></i>Início</a>
+    <a href="#"><i class="fa-solid fa-circle-info"></i>Sobre</a>
+    <a href="#"><i class="fa-solid fa-leaf"></i>Projetos</a>
+    <a href="#"><i class="fa-solid fa-envelope"></i>Contato</a>
+  </nav>
+
+  <main class="intranet-main">
+    <section class="card">
+      <h2><i class="fa-solid fa-file-invoice-dollar"></i> Financeiro</h2>
+      <p>
+        Abaixo você pode acessar o painel de finanças da Fazenda Deriva. Todas as interações são carregadas diretamente do Google Apps Script.
+      </p>
+
+      <!-- iframe apontando para o App Script -->
+      <iframe 
+        class="apps-iframe"
+        src="https://script.google.com/macros/s/AKfycbzFRPiXwNdEFu1BE1SUJLJ6fa8hZzDZIz6pJPq63OTXQoSDsECSiSCpqklgeRkMtFto7Q/exec"
+        allowfullscreen>
+      </iframe>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 Fazenda Deriva. Todos os direitos reservados.
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('menu').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
