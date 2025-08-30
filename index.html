@@ -2,94 +2,324 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fazenda Deriva</title>
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-p7vX2QYGj1ZQm8Q6kF8wNrlS+/2+he0uQnEe/4ZkYmDz8x+5bHsIGrSBFhdYEoFZ4GQ+fITeh+n6m+nXEf+ktA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
   <style>
-    * {margin:0; padding:0; box-sizing:border-box; font-family:Arial, sans-serif;}
-    body {background:#fff; color:#333;}
-
-    header, footer {
-      background:#870b44;
-      color:#fff;
-      padding:1rem 2rem;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
+    /* Reset & Base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #f5f5f5;
+      color: #333;
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
-    header h1 {
-      font-size:1.5rem;
-      font-weight:bold;
+    /* Headings */
+    h1,
+    h2,
+    h3 {
+      font-family: 'Merriweather', serif;
+      color: #870b44;
     }
 
-    .menu-btn {
-      font-size:1.5rem;
-      cursor:pointer;
-      background:none;
-      border:none;
-      color:#fff;
-    }
-
-    nav {
-      position:fixed;
-      top:0;
-      right:-250px;
-      width:250px;
-      height:100%;
-      background:#870b44;
-      transition:0.3s ease;
-      display:flex;
-      flex-direction:column;
-      padding:2rem 1rem;
-    }
-
-    nav a {
-      color:#fff;
-      text-decoration:none;
-      margin:1rem 0;
-      font-size:1.2rem;
-    }
-
-    nav.active {right:0;}
-
-    main {
-      min-height:80vh;
-      padding:2rem;
-      text-align:center;
-    }
-
+    /* Header & Footer */
+    header,
     footer {
-      text-align:center;
-      justify-content:center;
-      font-size:0.9rem;
+      background: #870b44;
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    footer {
+      justify-content: center;
+      font-size: 0.9rem;
+    }
+
+    /* Logo */
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    .logo i {
+      margin-right: 0.5rem;
+      font-size: 1.6rem;
+    }
+
+    /* Nav (slide-in) */
+    .menu-btn {
+      font-size: 1.4rem;
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      right: -260px;
+      width: 260px;
+      height: 100%;
+      background: #fff;
+      box-shadow: -2px 0 6px rgba(0, 0, 0, 0.1);
+      transition: right 0.3s ease;
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+    }
+    nav.active {
+      right: 0;
+    }
+    nav a {
+      display: flex;
+      align-items: center;
+      margin: 1rem 0;
+      color: #870b44;
+      font-weight: 500;
+      transition: color 0.3s, transform 0.3s;
+    }
+    nav a i {
+      margin-right: 0.6rem;
+      width: 1.2rem;
+      text-align: center;
+    }
+    nav a:hover {
+      color: #a3c293;
+      transform: translateX(6px);
+    }
+
+    /* Main Content */
+    main {
+      flex: 1;
+      padding: 2rem;
+      max-width: 960px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .btn {
+      display: inline-block;
+      background-color: #870b44;
+      color: #fff;
+      padding: 0.6rem 1.2rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background 0.3s, transform 0.2s;
+      text-decoration: none;
+    }
+    .btn:hover {
+      background-color: #a30e55;
+      transform: scale(1.05);
+    }
+    .white-bg {
+      background: #fff;
+      color: #870b44;
+      padding: 1rem;
+      border-radius: 6px;
+    }
+
+    /* Sections */
+    .hero {
+      margin-bottom: 2rem;
+    }
+    .hero p {
+      margin-top: 0.5rem;
+      font-size: 1.1rem;
+      color: #555;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .feature-card {
+      background: #fff;
+      border-radius: 6px;
+      padding: 1.5rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      text-align: left;
+    }
+    .feature-card i {
+      font-size: 1.8rem;
+      color: #6b8e23;
+      margin-bottom: 0.8rem;
+    }
+    .feature-card h3 {
+      margin-bottom: 0.6rem;
+    }
+    .feature-card p {
+      color: #666;
+      font-size: 0.95rem;
+    }
+
+    /* Login Modal */
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+    }
+    .modal.active {
+      display: flex;
+    }
+    .modal-content {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+      text-align: left;
+    }
+    .modal-content h2 {
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+      color: #870b44;
+    }
+    .modal-content label {
+      display: block;
+      margin: 0.6rem 0 0.3rem;
+      font-weight: 500;
+    }
+    .modal-content input {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .modal-content .btn {
+      width: 100%;
+      margin-top: 1rem;
+    }
+    .close-btn {
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      color: #333;
+      cursor: pointer;
     }
   </style>
 </head>
+
 <body>
+  <!-- Header -->
   <header>
-    <h1>Fazenda Deriva</h1>
-    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <div class="logo">
+      <i class="fas fa-seedling"></i>
+      <h1>Fazenda Deriva</h1>
+    </div>
+    <div>
+      <button class="btn" onclick="toggleLogin()">
+        <i class="fas fa-sign-in-alt"></i> Login
+      </button>
+      <button class="menu-btn" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
   </header>
 
+  <!-- Slide-in Nav -->
   <nav id="menu">
-    <a href="#">Início</a>
-    <a href="#">Sobre</a>
-    <a href="#">Projetos</a>
-    <a href="#">Contato</a>
+    <a href="#"><i class="fas fa-home"></i>Início</a>
+    <a href="#"><i class="fas fa-info-circle"></i>Sobre</a>
+    <a href="#"><i class="fas fa-leaf"></i>Projetos</a>
+    <a href="#"><i class="fas fa-envelope"></i>Contato</a>
   </nav>
 
+  <!-- Main -->
   <main>
-    <h2>Bem-vindo à Fazenda Deriva</h2>
-    <p>Um espaço de conexão com a natureza e desenvolvimento sustentável.</p>
+    <section class="hero">
+      <h2>Bem-vindo à Fazenda Deriva</h2>
+      <p>Um espaço de conexão com a natureza e desenvolvimento sustentável.</p>
+      <a href="#sobre" class="btn">Saiba Mais</a>
+    </section>
+
+    <section id="sobre" class="features">
+      <div class="feature-card">
+        <i class="fas fa-tractor"></i>
+        <h3>Agricultura Sustentável</h3>
+        <p>Práticas que respeitam o solo, a água e o ar, garantindo colheitas saudáveis.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-water"></i>
+        <h3>Recursos Hídricos</h3>
+        <p>Manejo inteligente da água para irrigação e conservação ambiental.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-chart-line"></i>
+        <h3>Controle Financeiro</h3>
+        <p>Área privativa para gerenciar receitas, despesas e investimentos da fazenda.</p>
+      </div>
+    </section>
   </main>
 
+  <!-- Login Modal -->
+  <div id="login-modal" class="modal">
+    <div class="modal-content">
+      <button class="close-btn" onclick="toggleLogin()">&times;</button>
+      <h2>Área Privativa</h2>
+      <form>
+        <label for="user">Usuário</label>
+        <input type="text" id="user" name="user" placeholder="Digite seu usuário" required />
+        <label for="pass">Senha</label>
+        <input
+          type="password"
+          id="pass"
+          name="pass"
+          placeholder="Digite sua senha"
+          required
+        />
+        <button type="submit" class="btn">Entrar</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
   <footer>
-    © 2025 Fazenda Deriva. Todos os direitos reservados.
+    <p>© 2025 Fazenda Deriva. Todos os direitos reservados.</p>
   </footer>
 
   <script>
     function toggleMenu() {
-      document.getElementById("menu").classList.toggle("active");
+      document.getElementById('menu').classList.toggle('active');
+    }
+    function toggleLogin() {
+      document.getElementById('login-modal').classList.toggle('active');
     }
   </script>
 </body>
