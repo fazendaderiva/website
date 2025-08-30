@@ -1,1 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fazenda Deriva</title>
 
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Font Awesome (CDN oficial 6.4.0) -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    rel="stylesheet"
+  />
+	<!-- CSS próprios -->
+	<link rel="stylesheet" href="css/basic.css">
+ 
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-top">
+      <div class="logo">
+        <i class="fa-solid fa-seedling"></i>
+        <h2 style="color:white;">Bem-vindo à Fazenda Deriva</h2>
+      </div>
+      <div style="display: flex; gap: 1rem; align-items:center;">
+        <button class="btn" onclick="window.location.href='https://intranet.fazendaderiva.com.br'">
+          <i class="fa-solid fa-chart-line"></i>Área Privativa
+        </button>
+        <button class="menu-btn" onclick="toggleMenu()">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Slide-in Nav -->
+  <nav id="menu">
+    <button class="close-menu" onclick="toggleMenu()">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <a href="#"><i class="fa-solid fa-house"></i>Início</a>
+    <a href="#"><i class="fa-solid fa-circle-info"></i>Sobre</a>
+    <a href="#"><i class="fa-solid fa-leaf"></i>Projetos</a>
+    <a href="#"><i class="fa-solid fa-envelope"></i>Contato</a>
+  </nav>
+
+  <!-- Corpo -->
+  <main>
+    <section class="white-bg" style="margin-bottom: 2rem;">
+      <h3><i class="fa-solid fa-leaf"></i> Sobre a Fazenda</h3>
+      <p>
+        A Fazenda Deriva é um espaço dedicado à conexão com a natureza, práticas sustentáveis e vida simples. Aqui cultivamos alimentos orgânicos, preservamos a biodiversidade e buscamos equilíbrio entre tecnologia e tradição.
+      </p>
+    </section>
+
+    <section class="white-bg" style="margin-bottom: 2rem;">
+      <h3><i class="fa-solid fa-tractor"></i> Projetos</h3>
+      <ul style="list-style: none; padding-left: 0;">
+        <li style="margin-bottom: 1rem;">
+          <strong>🌱 Horta Agroecológica:</strong> Produção de alimentos sem agrotóxicos, com manejo regenerativo do solo.
+        </li>
+        <li style="margin-bottom: 1rem;">
+          <strong>💧 Captação de Água da Chuva:</strong> Sistema de armazenamento e filtragem para uso consciente.
+        </li>
+        <li style="margin-bottom: 1rem;">
+          <strong>📊 Sistema de Finanças:</strong> Área privativa para controle de receitas, despesas e investimentos da fazenda.
+        </li>
+      </ul>
+    </section>
+
+    <section class="white-bg">
+      <h3><i class="fa-solid fa-envelope"></i> Contato</h3>
+      <p>Fale com a gente! Estamos sempre abertos a trocas, parcerias e boas conversas.</p>
+      <form action="https://formspree.io/f/mwpnoopr" method="POST">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" placeholder="Seu nome" required />
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Seu email" required />
+        <label for="mensagem">Mensagem</label>
+        <textarea id="mensagem" name="mensagem" rows="4" placeholder="Escreva sua mensagem..." required></textarea>
+        <div style="text-align: center; margin-top: 1rem;">
+          <button type="submit" class="btn">
+            <i class="fa-solid fa-paper-plane"></i> Enviar
+          </button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 Fazenda Deriva. Todos os direitos reservados.
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('menu').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
