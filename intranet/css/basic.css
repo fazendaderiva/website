@@ -15,17 +15,38 @@ h1, h2, h3 {
 main p { text-align: justify; }
 form { text-align: left; }
 
+
 /* Header */
-header {
-  background: #870b44; color: #fff;
-  padding: 1rem 2rem;
-  display: flex; flex-direction: column;
-}
 .header-top {
-  width: 100%; display: flex;
+  display: flex;
   justify-content: space-between;
-  align-items: center; flex-wrap: wrap;
+  align-items: center;
+  background: #870b44;
+  padding: 0.8rem 1rem;
+  color: white;
+  flex-wrap: nowrap; /* não deixa o ícone cair */
 }
+
+.header-top h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  white-space: nowrap;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .header-top h2 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Celular */
+@media (max-width: 480px) {
+  .header-top h2 {
+    font-size: 1rem;
+  }
+}
+
 .logo { display: flex; align-items: center; }
 .logo i { margin-right: 0.5rem; font-size: 1.6rem; }
 
