@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fazenda Deriva - Financeiro</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="../css/basic.css">
+
+<style>
+  html, body {
+    margin: 0; padding: 0; height: 100%;
+    font-family: 'Roboto', sans-serif;
+    overflow: hidden; /* remove barra de rolagem da página */
+  }
+
+
+
+ 
+
+  .iframe-container {
+    height: calc(100% - 100px); /* altura total menos header+footer */
+    width: 100%;
+  }
+
+  .iframe-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+  }
+</style>
+</head>
+
+<body>
+<header>
+  <div class="header-top">
+      <div class="logo">
+        <i class="fa-solid fa-seedling"></i>
+        <h2 style="color:white;">Criar Nova HashTag</h2>
+      </div>
+      <div style="display: flex; gap: 1rem; align-items:center;">
+        <button class="menu-btn" onclick="toggleMenu()">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+</header>
+<!-- Slide-in Nav -->
+    <nav id="menu">
+    <button class="close-menu" onclick="toggleMenu()">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <a href="index.html"><i class="fa-solid fa-house"></i> Início</a>
+     <a href="novatransacao.html"><i class="fa-solid fa-right-left"></i> Add Transação</a>
+	 <a href="update.html"><i class="fa-solid fa-arrows-rotate"></i> Atualizar Transação</a>
+  <!--<a href="novatag.html"><i class="fa-solid fa-tags"></i> Add Tag</a>-->
+  <a href="newgas.html"><i class="fa-solid fa-gas-pump"></i> Novo Abastecimento</a>
+  <a href="dashboard.html"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
+  <a href="https://docs.google.com/spreadsheets/d/1W_yJR3Mrkt4Es7CsUyhrBCXEKmQ1ZHhJOpO1GQSb2Y4/edit?gid=0#gid=0" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-database"></i> Base de Dados</a>
+
+  </nav>
+
+<div class="iframe-container">
+  <iframe 
+    src="https://script.google.com/macros/s/AKfycbzFRPiXwNdEFu1BE1SUJLJ6fa8hZzDZIz6pJPq63OTXQoSDsECSiSCpqklgeRkMtFto7Q/exec?page=newtag"
+    sandbox="allow-scripts allow-forms allow-same-origin">
+  </iframe>
+</div>
+<script>
+    function toggleMenu() {
+      document.getElementById('menu').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
