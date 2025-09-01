@@ -157,3 +157,9 @@
       padding: 1rem 2rem; text-align: center;
       font-size: 0.9rem;
     }
+	
+	@media (max-width: 620px) {
+    header h2 {
+        display: none;
+    }
+}
