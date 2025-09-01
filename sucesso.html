@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mensagem Enviada - Fazenda Deriva</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/success.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-top">
+      <div class="logo">
+        <i class="fa-solid fa-seedling"></i>
+        <h2 style="color:white;">Fazenda Deriva</h2>
+      </div>
+      <div style="display: flex; gap: 1rem; align-items:center;">
+        <button class="btn" onclick="window.location.href='https://intranet.fazendaderiva.com.br'">
+          <i class="fa-solid fa-chart-line"></i>Área Privativa
+        </button>
+        <button class="menu-btn" onclick="toggleMenu()">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Slide-in Nav -->
+  <nav id="menu">
+    <button class="close-menu" onclick="toggleMenu()">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <a href="index.html"><i class="fa-solid fa-house"></i>Início</a>
+    <a href="#"><i class="fa-solid fa-circle-info"></i>Sobre</a>
+    <a href="#"><i class="fa-solid fa-leaf"></i>Projetos</a>
+    <a href="#"><i class="fa-solid fa-envelope"></i>Contato</a>
+  </nav>
+
+  <!-- Corpo -->
+  <main>
+    <section class="white-bg success-box">
+      <i class="fa-solid fa-circle-check success-icon"></i>
+      <h2>Sua mensagem foi enviada com sucesso!</h2>
+      <p>Agradecemos o contato. Em breve retornaremos.</p>
+      <div style="margin-top: 1.5rem;">
+        <a href="index.html" class="btn"><i class="fa-solid fa-arrow-left"></i> Voltar para a página inicial</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 Fazenda Deriva. Todos os direitos reservados.
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('menu').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
