@@ -103,6 +103,64 @@
 	  margin-bottom: 0.3rem;
 	  font-weight: 500;
 	}
+	/*SocialMidias*/
+		.social-section {
+	  text-align: center;
+	  padding: 40px 20px;
+	  background: #fff;
+	  margin-bottom: 2rem;
+	}
+
+	.social-section h2 {
+	  color: #870b44;
+	  margin-bottom: 20px;
+	  font-size: 24px;
+	}
+
+	.social-links {
+	  display: flex;
+	  justify-content: center;
+	  gap: 20px;
+	  flex-wrap: wrap;
+	}
+
+	.social {
+	  display: flex;
+	  align-items: center;
+	  gap: 8px;
+	  padding: 12px 20px;
+	  border-radius: 8px;
+	  font-size: 18px;
+	  text-decoration: none;
+	  color: #fff;
+	  transition: transform 0.2s;
+	}
+
+	.social i {
+	  font-size: 22px;
+	}
+
+	/* Cores personalizadas */
+	.instagram {
+	  background: #870b44;
+	}
+
+	.tiktok {
+	  background: #870b44;
+	}
+
+	.whatsapp {
+	  background: #870b44;
+	}
+
+	/* Hover */
+	.social:hover {
+	  transform: scale(1.05);
+	  opacity: 0.9;
+	}
+
+
+
 
 
     /* Login Modal */
