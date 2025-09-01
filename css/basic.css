@@ -86,7 +86,7 @@
     }
 	
 	/*Formulário*/
-		form input,
+	form input,
 	form textarea,
 	form select {
 	  width: 100%;
@@ -103,6 +103,7 @@
 	  margin-bottom: 0.3rem;
 	  font-weight: 500;
 	}
+	
 	/*SocialMidias*/
 		.social-section {
 	  text-align: center;
@@ -141,58 +142,14 @@
 	}
 
 	/* Cores personalizadas */
-	.instagram {
-	  background: #870b44;
-	}
-
-	.tiktok {
-	  background: #870b44;
-	}
-
-	.whatsapp {
-	  background: #870b44;
-	}
-
+	.instagram, .tiktok, .whatsapp, .pinterest, .youtube {
+    background: #870b44;
+}
 	/* Hover */
 	.social:hover {
 	  transform: scale(1.05);
 	  opacity: 0.9;
 	}
-
-
-
-
-
-    /* Login Modal */
-    .modal {
-      position: fixed; top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.5);
-      display: none; justify-content: center; align-items: center;
-      padding: 1rem;
-    }
-    .modal.active { display: flex; }
-    .modal-content {
-      background: #fff; padding: 2rem; border-radius: 8px;
-      width: 100%; max-width: 400px;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.15);
-      position: relative;
-    }
-    .modal-content h2 {
-      margin-bottom: 1rem; font-size: 1.4rem; color: #870b44;
-    }
-    .modal-content label { display: block; margin: 0.6rem 0 0.3rem; font-weight: 500; }
-    .modal-content input {
-      width: 100%; padding: 0.5rem;
-      border: 1px solid #ccc; border-radius: 4px;
-    }
-    .modal-content .btn { width: 100%; margin-top: 1rem; justify-content: center; }
-    .close-btn {
-      background: none; border: none;
-      font-size: 1.2rem; position: absolute;
-      top: 1rem; right: 1rem;
-      color: #333; cursor: pointer;
-    }
 
     /* Footer */
     footer {
