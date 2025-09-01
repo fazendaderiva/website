@@ -73,24 +73,69 @@
           <strong>📊 Sistema de Finanças:</strong> Área privativa para controle de receitas, despesas e investimentos da fazenda.
         </li>
       </ul>
-    </section>
-
+		</section>
+	 <section class="white-bg social-section">
+		<h2>Conecte-se conosco</h2>
+		<div class="social-links">
+		  <a href="https://www.instagram.com" target="_blank" class="social instagram">
+			<i class="fab fa-instagram"></i>
+			<span>Instagram</span>
+		  </a>
+		  <a href="https://www.tiktok.com" target="_blank" class="social tiktok">
+			<i class="fab fa-tiktok"></i>
+			<span>TikTok</span>
+		  </a>
+		  <a href="https://wa.me/SEUNUMERO" target="_blank" class="social whatsapp">
+			<i class="fab fa-whatsapp"></i>
+			<span>WhatsApp</span>
+		  </a>
+		</div>
+	  </section>
     <section class="white-bg">
       <h3><i class="fa-solid fa-envelope"></i> Contato</h3>
-      <p>Fale com a gente! Estamos sempre abertos a trocas, parcerias e boas conversas.</p>
-      <form action="https://formspree.io/f/mwpnoopr" method="POST">
-        <label for="nome">Nome</label>
-        <input type="text" id="nome" name="nome" placeholder="Seu nome" required />
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="Seu email" required />
-        <label for="mensagem">Mensagem</label>
-        <textarea id="mensagem" name="mensagem" rows="4" placeholder="Escreva sua mensagem..." required></textarea>
-        <div style="text-align: center; margin-top: 1rem;">
-          <button type="submit" class="btn">
-            <i class="fa-solid fa-paper-plane"></i> Enviar
-          </button>
-        </div>
-      </form>
+      <p>Mande sua carta pra gente ! Estamos sempre abertos a trocas, parcerias e boas conversas.</p>
+      <form id="contato-form" action="https://formspree.io/f/mwpnoopr" method="POST">
+  <label for="nome">Nome</label>
+  <input type="text" id="nome" name="nome" placeholder="Seu nome" required />
+
+  <label for="email">Email</label>
+  <input type="email" id="email" name="email" placeholder="Seu email" required />
+
+  <label for="mensagem">Mensagem</label>
+  <textarea id="mensagem" name="mensagem" rows="4" placeholder="Escreva sua mensagem..." required></textarea>
+
+  <div style="text-align: center; margin-top: 1rem;">
+    <button type="submit" class="btn">
+      <i class="fa-solid fa-paper-plane"></i> Enviar
+    </button>
+  </div>
+</form>
+
+<script>
+document.getElementById("contato-form").addEventListener("submit", async function(e) {
+  e.preventDefault(); // impede recarregamento automático
+
+  const form = e.target;
+  const data = new FormData(form);
+
+  try {
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      window.location.href = "https://www.fazendaderiva.com.br/sucesso.html";
+    } else {
+      alert("Ocorreu um erro no envio. Tente novamente.");
+    }
+  } catch (error) {
+    alert("Erro de conexão. Verifique sua internet.");
+  }
+});
+</script>
+
     </section>
   </main>
 
