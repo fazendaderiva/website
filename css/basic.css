@@ -158,8 +158,27 @@
       font-size: 0.9rem;
     }
 	
-	@media (max-width: 620px) {
+@media (max-width: 620px) {
+    /* Esconde h2 do header */
     header h2 {
         display: none;
+    }
+
+    /* Social links empilhados e tamanho padronizado */
+    .social-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px; /* espaço entre os ícones */
+    }
+
+    .social {
+        width: 200px; /* largura padronizada */
+        justify-content: center;
+        font-size: 16px; /* tamanho do texto ajustado */
+        padding: 10px; /* padding uniforme */
+    }
+
+    .social i {
+        font-size: 20px; /* tamanho do ícone */
     }
 }
