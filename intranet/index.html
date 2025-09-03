@@ -3,22 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fazenda Deriva</title>
-
+  <title>Fazenda Deriva - Financeiro</title>
   <!-- Google Fonts -->
   <link
     href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@400;500;700&display=swap"
     rel="stylesheet"
   />
 
-  <!-- Font Awesome (CDN oficial 6.4.0) -->
+  <!-- Font Awesome -->
   <link
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     rel="stylesheet"
   />
-	<!-- CSS próprios -->
-	<link rel="stylesheet" href="/css/basic.css">
-	<link rel="stylesheet" href="/css/home.css">
+  
+  <!-- CSS próprio -->
+  <link rel="stylesheet" href="/intranet/css/financeiro.css">
+  <link rel="stylesheet" href="/intranet/css/basic.css">
+  
 </head>
 <body>
 
@@ -26,8 +27,8 @@
   <header>
     <div class="header-top">
       <div class="logo">
-        <i class="fa-solid fa-seedling"></i>
-        <h2 style="color:white;">Bem-vindo à Intranet da Fazenda Deriva</h2>
+        <i class="fa-solid fa-file-invoice-dollar"></i>
+        <h3 style="color:white;">Painel Financeiro</h3>
       </div>
       <div style="display: flex; gap: 1rem; align-items:center;">
         <button class="menu-btn" onclick="toggleMenu()">
@@ -42,67 +43,54 @@
     <button class="close-menu" onclick="toggleMenu()">
       <i class="fa-solid fa-xmark"></i>
     </button>
-    <a href="/financeiro"><i class="fa-solid fa-file-invoice-dollar"></i> Finanças</a>
-    <a href="/notion/agenda.html"><i class="fa-solid fa-calendar-days"></i> Agenda</a>
-    <a href="#"><i class="fa-solid fa-newspaper"></i> Notícias</a>
-    <a href="#"><i class="fa-solid fa-envelope"></i>Contato</a>
+    <a href="/intranet/index.html"><i class="fa-solid fa-house"></i> Página Principal</a>
+     <a href="novatransacao.html"><i class="fa-solid fa-right-left"></i> Add Transação</a>
+	 <a href="update.html"><i class="fa-solid fa-arrows-rotate"></i> Atualizar Transação</a>
+  <a href="novatag.html"><i class="fa-solid fa-tags"></i> Add Tag</a>
+  <a href="newgas.html"><i class="fa-solid fa-gas-pump"></i> Novo Abastecimento</a>
+  <a href="dashboard.html"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
+  <a href="https://docs.google.com/spreadsheets/d/1W_yJR3Mrkt4Es7CsUyhrBCXEKmQ1ZHhJOpO1GQSb2Y4/edit?gid=0#gid=0" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-database"></i> Base de Dados</a>
+
   </nav>
 
-  <main class="intranet-main">
 
-  <!-- Dashboard de Boas-vindas Card 1-->
-  <section class="card welcome-card">
-    <h2><i class="fa-solid fa-house-user"></i> Bem-vindo à Intranet</h2>
-    <p>
-      Aqui você pode acessar todas as informações internas da Fazenda Deriva: finanças, agenda de compromissos e novidades da equipe. Tudo organizado e seguro para nossos dois usuários autorizados.
-    </p>
-  </section>
-<!-- Seção de Links Rápidos Card 2-->
-  <section class="card quick-links-card">
-    <h3><i class="fa-solid fa-link"></i> Acessos Rápidos</h3>
-    <div class="quick-links">
-      <a href="/financeiro/novatransacao.html"><i class="fa-solid fa-right-left"></i> Add Transação</a>
-	  <a href="/financeiro/newgas.html"><i class="fa-solid fa-gas-pump"></i> Novo Abastecimento</a>
-      <a href="/financeiro/dashboard.html"><i class="fa-solid fa-chart-line"></i> Dashboard</a>
-      
-    </div>
-  </section>
-  <!-- Seção de Notícias/Atualizações Card 3-->
-  <section class="card updates-card">
-    <h3><i class="fa-solid fa-newspaper"></i> Últimas Atualizações</h3>
-    <ul class="updates-list">
-      <li><strong>📅 30/08/2025:</strong> Nova planilha de finanças atualizada.</li>
-      <li><strong>🌱 28/08/2025:</strong> Colheita da horta agroecológica concluída.</li>
-      <li><strong>💧 25/08/2025:</strong> Sistema de captação de água passou por manutenção preventiva.</li>
-    </ul>
+
+ <main class="intranet-main">
+  <section class="card">
+    <h3><i class="fa-solid fa-right-left" style="color:#2e86de;"></i> Novas Transações</h3>
+    <p>Adicione receitas e despesas de forma rápida e prática.</p>
+    <a href="novatransacao.html" class="btn">Adicionar</a>
   </section>
 
-  
-
-  <!-- Seção de Informações da Fazenda Card 4-->
-  <section class="card about-card">
-    <h3><i class="fa-solid fa-seedling"></i> Sobre a Fazenda</h3>
-    <p>
-      A Fazenda Deriva é dedicada à vida sustentável, preservação da biodiversidade e cultivo de alimentos orgânicos. Nesta Intranet você encontrará registros internos, acompanhamento de projetos e todas as informações relevantes para gestão da fazenda.
-    </p>
-  </section>
-  
-   <!-- Seção de Notion Card 5-->
-  <section class="card about-card">
-    <h3><i class="fa-solid fa-seedling"></i> Notion</h3>
-    <p>
-      Aqui vai o notion
-    </p>
-  </section>
-  
- <!-- Seção de Agenda Card 6-->
-  <section class="card about-card">
-    <h3><i class="fa-solid fa-seedling"></i> Agenda</h3>
-    <p>
-      Aqui vai a agenda
-    </p>
+  <section class="card">
+    <h3><i class="fa-solid fa-arrows-rotate" style="color:#c0392b;"></i> Atualizar Transações</h3>
+    <p>Corrija ou ajuste registros já existentes rapidamente.</p>
+    <a href="update.html" class="btn">Atualizar</a>
   </section>
 
+  <section class="card">
+    <h3><i class="fa-solid fa-tags" style="color:#27ae60;"></i> Tags</h3>
+    <p>Organize suas transações com etiquetas personalizadas.</p>
+    <a href="novatag.html" class="btn">Gerenciar</a>
+  </section>
+
+  <section class="card">
+    <h3><i class="fa-solid fa-gas-pump" style="color:#f39c12;"></i> Novo Abastecimento</h3>
+    <p>Registre os combustíveis e despesas do veículo da Fazenda.</p>
+    <a href="newgas.html" class="btn">Registrar</a>
+  </section>
+
+  <section class="card">
+    <h3><i class="fa-solid fa-chart-line" style="color:#8e44ad;"></i> Dashboard</h3>
+    <p>Visualize gráficos e resumos das finanças da Fazenda.</p>
+    <a href="dashboard.html" class="btn">Abrir</a>
+  </section>
+
+  <section class="card">
+    <h3><i class="fa-solid fa-database" style="color:#16a085;"></i> Base de Dados</h3>
+    <p>Confira e atualize a planilha do Google com todas as transações.</p>
+    <a href="https://docs.google.com/spreadsheets/d/1W_yJR3Mrkt4Es7CsUyhrBCXEKmQ1ZHhJOpO1GQSb2Y4/edit?gid=0#gid=0" target="_blank" rel="noopener noreferrer" class="btn">Abrir</a>
+  </section>
 </main>
 
 
