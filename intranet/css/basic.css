@@ -140,13 +140,6 @@ nav a:hover {
   transform: translateX(6px);
 }
 
-/* Main Content */
-main {
-  flex: 1;
-  margin: 0 auto;
-  text-align: center;
-}
-
 .white-bg {
   background: #fff;
   color: #870b44;
